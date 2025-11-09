@@ -4,37 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - MIAGE S5</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Style minimal intégré (à placer dans ton CSS externe ensuite) */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav ul.menu {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav ul.menu li {
+      margin: 0;
+    }
+
+    nav ul.menu a {
+      text-decoration: none;
+      color: white;
+      background: #0055aa;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav ul.menu a:hover {
+      background: #0077cc;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      color: #003366;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: #003366;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Portfolio - Introduction aux systèmes d'information</h1>
+    <h1>Portfolio – Introduction aux Systèmes d’Information</h1>
     <nav>
       <ul class="menu">
-        <li><a href="index.html">Accueil</a></li>
         <li><a href="rubriques/travaux.html">Travaux demandés</a></li>
         <li><a href="rubriques/notes.html">Notes de cours</a></li>
         <li><a href="rubriques/systeme-info.html">Documents SI</a></li>
         <li><a href="rubriques/certifications.html">Certifications</a></li>
         <li><a href="rubriques/projet.html">Projet final</a></li>
-        <li><a href="rubriques/diaporama.html">Diaporama soutenance</a></li>
-        <li><a href="rubriques/ressources.html">Autres ressources</a></li>
-        <li><a href="https://github.com/TON-UTILISATEUR/TON-REPO" target="_blank">Code GitHub</a></li>
+        <li><a href="rubriques/diaporama.html">Soutenance</a></li>
+        <li><a href="rubriques/ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/TON-UTILISATEUR/TON-REPO" target="_blank">GitHub</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section>
+    <section class="intro">
+      <img src="images/photo-profil.jpg" alt="Photo de profil">
       <h2>Bienvenue sur mon portfolio</h2>
-      <p>Ce portfolio présente l’ensemble des travaux réalisés dans le cadre du module <strong>Introduction aux systèmes d’information</strong> (S5 - MIAGE).</p>
-      <p>Vous pouvez accéder aux différentes rubriques via le menu de navigation ci-dessus.</p>
+      <p>Je suis <strong>Mathieu Siegel</strong>, étudiant en <strong>MIAGE (S5)</strong> à l’Université de Nanterre. 
+      Ce portfolio présente l’ensemble des travaux, projets et ressources réalisés dans le cadre du module 
+      <strong>Introduction aux Systèmes d’Information</strong>.</p>
+
+      <p>Vous y trouverez mes notes de cours, mes travaux pratiques, ainsi que le projet final réalisé en équipe. 
+      L’objectif de ce site est de démontrer mes compétences en conception, modélisation et gestion de systèmes d’information.</p>
+    </section>
+
+    <section>
+      <h3>Objectifs du module</h3>
+      <ul>
+        <li>Comprendre les fondements des systèmes d'information dans les organisations</li>
+        <li>Appliquer les outils de modélisation (Merise, UML...)</li>
+        <li>Découvrir la relation entre SI et stratégie d’entreprise</li>
+        <li>Développer des compétences analytiques et techniques</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Nom Prénom - MIAGE S5</p>
+    <p>&copy; 2025 – <strong>Mathieu Siegel</strong> – MIAGE S5 | <a href="mailto:ton.email@exemple.com" style="color:white;">Me contacter</a></p>
   </footer>
 
 </body>
