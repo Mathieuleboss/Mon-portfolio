@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes de cours - Portfolio MIAGE S5</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Ajustements spécifiques à cette page */
+    main.content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      height: 750px;
+      border: 2px solid #0077cc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-top: 25px;
+      background-color: #fff;
+    }
+
+    nav.sidebar {
+      position: fixed;
+      top: 130px;
+      left: 0;
+      width: 240px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-right: 2px solid #ddd;
+      height: calc(100vh - 130px);
+      box-sizing: border-box;
+      overflow-y: auto;
+      box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+      z-index: 5;
+    }
+
+    .sidebar h2 {
+      color: #003366;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .accordion {
+      cursor: pointer;
+      padding: 10px 15px;
+      background-color: #0055aa;
+      color: white;
+      border: none;
+      text-align: left;
+      outline: none;
+      margin-bottom: 6px;
+      border-radius: 4px;
+      transition: 0.3s;
+      width: 100%;
+      font-weight: 500;
+    }
+
+    .accordion:hover,
+    .accordion.active {
+      background-color: #0077cc;
+    }
+
+    .panel {
+      display: none;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .panel button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+      background-color: #e6e6e6;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+      text-align: left;
+    }
+
+    .panel button:hover {
+      background-color: #d4d4d4;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-5px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: #003366;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      nav.sidebar {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 0;
+        border-right: none;
+        box-shadow: none;
+      }
+      main.content {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+  .download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #0055aa;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0077cc;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ======= HEADER PRINCIPAL ======= -->
+  <header>
+    <h1>Portfolio - Introduction aux systèmes d'information</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="travaux.html">Travaux demandés</a></li>
+        <li><a href="notes.html" class="active">Notes de cours</a></li>
+        <li><a href="systeme-info.html">Documents SI</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projet.html">Projet final</a></li>
+        <li><a href="diaporama.html">Soutenance</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/TON-UTILISATEUR/TON-REPO" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= SIDEBAR ======= -->
+  <nav class="sidebar">
+    <h2>Chapitres</h2>
+
+    <button class="accordion">Chapitre 1 : Introduction</button>
+    <div class="panel">
+      <button onclick="showPDF('Les livrables SI doc1.pdf')">Les livrables SI</button>
+      <button onclick="showPDF('Document synthétique des phases.pdf')">Phases d’un projet SI</button>
+    </div>
+
+    <button class="accordion">Chapitre 2 : Gestion de Projet</button>
+    <div class="panel">
+      <button onclick="showPDF('dossier 3.pdf')">Documents du dossier 3</button>
+      <button onclick="showPDF('dossier gestion projet.pdf')">Gestion de projet</button>
+    </div>
+
+    <button class="accordion">Projet Final</button>
+    <div class="panel">
+      <button onclick="showPDF('projet_final.pdf')">Projet final</button>
+    </div>
+  </nav>
+
+  <!-- ======= CONTENU PRINCIPAL ======= -->
+  <main class="content">
+    <h2>Notes de cours</h2>
+    <p>Sélectionnez un document dans la barre latérale pour l’afficher ci-dessous :</p>
+
+    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+    <a id="download-btn" href="#" download class="download-btn">Télécharger le PDF</a>
+  </main>
+
+  <footer>
+    <p>© 2025 Mon Portfolio – Tous droits réservés</p>
+  </footer>
+
+<script>
+  function showPDF(file) {
+    const path = '../docs/' + file; // ✅ définition du chemin complet
+
+    // Met à jour l'affichage du PDF
+    document.getElementById('pdf-viewer').src = path;
+
+    // Met à jour le lien de téléchargement
+    const downloadBtn = document.getElementById('download-btn');
+    downloadBtn.href = path;
+    downloadBtn.setAttribute('download', file);
+    downloadBtn.textContent = 'Télécharger : ' + file;
+  }
+
+  // PDF affiché par défaut
+  showPDF('tp gantt.pdf');
+
+  // Accordéon (menu déroulant)
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  }
+</script>
+
+
+</body>
+</html>
