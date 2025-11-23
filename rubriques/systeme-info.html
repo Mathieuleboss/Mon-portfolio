@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documents SI - Portfolio MIAGE S5</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Styles pour les cartes de documents */
+    .doc-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .doc-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px;
+      width: 220px;
+      transition: 0.3s;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    .doc-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .doc-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+
+    .doc-card a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .doc-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
 
@@ -25,41 +68,50 @@
     </nav>
   </header>
 
-<main>
-  <section>
-    <h2>Documents d’un Système d’Information</h2>
-    <p>
-      <strong>Objectif :</strong> Identifier, rédiger et organiser des documents liés à un système d’information.<br>
-      Les documents doivent être bien rédigés, classés et présentés de manière professionnelle.
-    </p>
+  <main>
+    <section>
+      <h2>Documents d’un Système d’Information</h2>
+      <p>
+        <strong>Objectif :</strong> Identifier, rédiger et organiser des documents liés à un système d’information.<br>
+        Les documents doivent être bien rédigés, classés et présentés de manière professionnelle.
+      </p>
 
-    <!-- Documents du projet -->
-    <h3>Documents du projet Bander Sneakers</h3>
-    <ul>
-      <li>
-        <a href="../docs/DiagrammeUML.png" target="_blank">Diagramme UML</a>
-      </li>
-      <li>
-        <a href="../docs/scheamGantt.pdf" target="_blank">Schema de Gantt</a>
-      </li>
-      <li>
-        <a href="../docs/Manuel_Utilisation_Bander_Sneakers.pdf" target="_blank">Manuel utilisateur</a>
-      </li>
-      <li>
-        <a href="../docs/SchemaBDD.png" target="_blank">Schema de la base de donéee</a>
-      </li>
-    </ul>
+      <!-- Documents du projet -->
+      <h3>Documents du projet Bander Sneakers</h3>
+      <ul class="doc-list">
+        <li class="doc-card">
+          <a href="../docs/DiagrammeUML.png" target="_blank">Diagramme UML</a>
+          <p>Représentation des classes et relations du site Bander Sneakers.</p>
+        </li>
+        <li class="doc-card">
+          <a href="../docs/schemGantt.pdf" target="_blank">Schéma de Gantt</a>
+          <p>Planning du projet avec les différentes phases et jalons.</p>
+        </li>
+        <li class="doc-card">
+          <a href="../docs/Manuel_Utilisation_Bander_Sneakers.pdf" target="_blank">Manuel utilisateur</a>
+          <p>Guide pour l'utilisation complète du site e-commerce.</p>
+        </li>
+        <li class="doc-card">
+          <a href="../docs/SchemaBDD.png" target="_blank">Schéma de la base de données</a>
+          <p>Structure des tables et relations pour le site Bander Sneakers.</p>
+        </li>
+      </ul>
 
-    <!-- Documents du cours -->
-    <h3>Documents réalisés en cours</h3>
-    <ul>
-      <li><a href="../docs/DiagramSIportfolio.drawio.pdf" target="_blank">Diagramme du Système d’Information</a></li>
-      <li><a href="../docs/Diagrame_des_flux.png" target="_blank">Diagramme des Flux</a></li>
-    </ul>
+      <!-- Documents réalisés en cours -->
+      <h3>Documents réalisés en cours</h3>
+      <ul class="doc-list">
+        <li class="doc-card">
+          <a href="../docs/DiagramSIportfolio.drawio.pdf" target="_blank">Diagramme du Système d’Information</a>
+          <p>Vue globale des modules et interactions pour un SI type.</p>
+        </li>
+        <li class="doc-card">
+          <a href="../docs/Diagrame_des_flux.png" target="_blank">Diagramme des Flux</a>
+          <p>Illustration de la circulation des informations dans un SI.</p>
+        </li>
+      </ul>
 
-  </section>
-</main>
-
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Mon Portfolio – Tous droits réservés</p>
@@ -67,8 +119,3 @@
 
 </body>
 </html>
-
-
-
-
-
