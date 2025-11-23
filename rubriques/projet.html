@@ -151,24 +151,28 @@
 
   <button class="accordion">Phase initiale</button>
   <div class="panel">
-    <button onclick="showPDF('CahierdesCharges_BS 2-1-17.pdf')">Introduction et Presentation du projet</button>
+    <button onclick="showPDF('CahierdesCharges_BS_2-1-17.pdf')">Introduction et Présentation du projet</button>
   </div>
 
   <button class="accordion">Analyse des besoins et Conception architecturale</button>
   <div class="panel">
-    <button onclick="showPDF('CahierdesCharges_BS 2-18-38.pdf')">Besoins SFG et SFD et architecture du projet</button>
+    <button onclick="showPDF('CahierdesCharges_BS_2-18-38.pdf')">Besoins, SFG/SFD et architecture</button>
   </div>
 
   <button class="accordion">Développement et Test de déploiement</button>
   <div class="panel">
-    <button onclick="showPDF('CahierdesCharges_BS 2-39-51.pdf')">Développement et test et déploiement</button>
+    <button onclick="showPDF('CahierdesCharges_BS_2-39-51.pdf')">Développement, tests et déploiement</button>
   </div>
 
-  <button class="accordion">Développement et Test</button>
+  <button class="accordion">Conclusion</button>
   <div class="panel">
-    <button onclick="showPDF('Guide_installation.pdf')">Guide d'installation</button>
-    <button onclick="showPDF('Guide_administration.pdf')">Guide d'administration</button>
+    <button onclick="showPDF('CahierdesCharges_BS_2-52-56.pdf')">Conclusion</button>
+  </div>
 
+  <button class="accordion">Annexe et schéma</button>
+  <div class="panel">
+    <button onclick="showPDF('CahierdesCharges_BS_2-57-100.pdf')">Annexes et schémas</button>
+  </div>
 
 </nav>
 
@@ -181,11 +185,11 @@
     <a href="https://bander-sneakers.kesug.com/" target="_blank" class="external-link-btn">
         ➜ Site Bander Sneakers
     </a>
-</div>
+  </div>
 
   <p>Choisissez un livrable dans le menu de gauche pour l’afficher :</p>
 
-  <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+  <embed id="pdf-viewer" class="pdf-viewer" type="application/pdf">
 
   <a id="download-btn" href="#" download class="download-btn">Télécharger le PDF</a>
 </main>
@@ -197,7 +201,7 @@
 <script>
 function showPDF(file) {
   const path = '../docs/' + file;
-  document.getElementById('pdf-viewer').src = path;
+  document.getElementById('pdf-viewer').setAttribute('src', path);
   const downloadBtn = document.getElementById('download-btn');
   downloadBtn.href = path;
   downloadBtn.setAttribute('download', file);
@@ -215,7 +219,7 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 // PDF par défaut
-showPDF('CahierdesCharges_BS 2-1-17.pdf');
+showPDF('CahierdesCharges_BS_2-1-17.pdf');
 </script>
 
 </body>
